@@ -63,6 +63,12 @@ public class ClientCrudService {
         }
     }
 
+    public List<Client> getAll() {
+        try (Session session = getSession()) {
+            return session.createQuery("from Client ", Client.class).list();
+        }
+    }
+
     private static Session getSession() {
         return HibernateUtil.getInstance()
                 .getSessionFactory()

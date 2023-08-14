@@ -2,10 +2,12 @@ package module10.services;
 
 import lombok.extern.slf4j.Slf4j;
 import module10.HibernateUtil;
+import module10.dto.Client;
 import module10.dto.Planet;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
@@ -61,6 +63,12 @@ public class PlanetCrudService {
             }
         } catch (NoSuchElementException e) {
             throw new NoSuchElementException("Planet with such ID doesn't exist");
+        }
+    }
+
+    public List<Planet> getAll() {
+        try (Session session = getSession()) {
+            return session.createQuery("from Planet ", Planet.class).list();
         }
     }
 

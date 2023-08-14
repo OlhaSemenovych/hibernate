@@ -14,12 +14,14 @@ public class Main {
         System.out.println(clientCrudService.getClientById(11));
         clientCrudService.updateClientById(15, "Test User 1");
         clientCrudService.deleteClientById(15);
+        System.out.println(clientCrudService.getAll());
 
         PlanetCrudService planetCrudService = new PlanetCrudService();
         planetCrudService.createPlanet(new Planet("Mars123", "Test Planet 123"));
         System.out.println(planetCrudService.getPlanetById("Mars123"));
         planetCrudService.updatePlanetById("Mars123", "5 Test Planet");
         planetCrudService.deletePlanetById("Mars123");
+        System.out.println(planetCrudService.getAll());
     }
 
 }
