@@ -3,6 +3,7 @@ package module10;
 import module10.dto.Client;
 import lombok.Getter;
 import module10.dto.Planet;
+import module10.dto.Ticket;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
@@ -20,6 +21,7 @@ public class HibernateUtil {
         sessionFactory = new Configuration()
                 .addAnnotatedClass(Client.class)
                 .addAnnotatedClass(Planet.class)
+                .addAnnotatedClass(Ticket.class)
                 .buildSessionFactory();
     }
 

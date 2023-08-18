@@ -1,23 +1,42 @@
 package module10.dto;
 
+import jakarta.persistence.*;
+import lombok.Data;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.ZonedDateTime;
 
+@Data
+@Entity
+@Table(name = "ticket")
+@NoArgsConstructor
 @Getter
 @Setter
 public class Ticket {
 
-    private int id;
-    private ZonedDateTime createdAt;
-    private int clientId;
-    private int fromPlanetId;
-    private int toPlanetId;
+    @Id
+    @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    public Ticket(int id, ZonedDateTime createdAt, int clientId, int fromPlanetId, int toPlanetId) {
-        this.id = id;
-        this.createdAt = createdAt;
+    @Column(name = "created_at")
+    private ZonedDateTime createdAt;
+
+    @ManyToOne(fetch = FetchType.EAGER, targetEntity = Client.class)
+    @JoinColumn(name = "client_id", referencedColumnName = "id", nullable = false)
+    private Client clientId;
+
+    @ManyToOne(fetch = FetchType.EAGER, targetEntity = Planet.class)
+    @JoinColumn(name = "from_planet_id", referencedColumnName = "id", nullable = false)
+    private Planet fromPlanetId;
+
+    @ManyToOne(fetch = FetchType.EAGER, targetEntity = Planet.class)
+    @JoinColumn(name = "to_planet_id", referencedColumnName = "id", nullable = false)
+    private Planet toPlanetId;
+
+    public Ticket(Client clientId, Planet fromPlanetId, Planet toPlanetId) {
         this.clientId = clientId;
         this.fromPlanetId = fromPlanetId;
         this.toPlanetId = toPlanetId;
