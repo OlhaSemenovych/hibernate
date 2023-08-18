@@ -1,9 +1,9 @@
-package module10.services;
+package module10_11.services;
 
 import lombok.extern.slf4j.Slf4j;
-import module10.dto.Client;
+import module10_11.dto.Client;
 import org.hibernate.Session;
-import module10.HibernateUtil;
+import module10_11.HibernateUtil;
 import org.hibernate.Transaction;
 
 import java.util.*;

@@ -1,4 +1,4 @@
-package module10.dto;
+package module10_11.dto;
 
 import jakarta.persistence.*;
 import lombok.Data;

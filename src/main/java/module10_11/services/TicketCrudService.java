@@ -1,9 +1,9 @@
-package module10.services;
+package module10_11.services;
 
-import module10.HibernateUtil;
-import module10.dto.Client;
-import module10.dto.Planet;
-import module10.dto.Ticket;
+import module10_11.HibernateUtil;
+import module10_11.dto.Client;
+import module10_11.dto.Planet;
+import module10_11.dto.Ticket;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 

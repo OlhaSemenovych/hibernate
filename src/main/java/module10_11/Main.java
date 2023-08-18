@@ -1,8 +1,8 @@
-package module10;
+package module10_11;
 
-import module10.services.ClientCrudService;
-import module10.services.PlanetCrudService;
-import module10.services.TicketCrudService;
+import module10_11.services.ClientCrudService;
+import module10_11.services.PlanetCrudService;
+import module10_11.services.TicketCrudService;
 
 public class Main {
 

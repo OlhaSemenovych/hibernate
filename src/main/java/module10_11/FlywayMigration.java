@@ -1,4 +1,4 @@
-package module10;
+package module10_11;
 
 import org.flywaydb.core.Flyway;
 
