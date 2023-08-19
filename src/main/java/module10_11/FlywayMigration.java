@@ -8,7 +8,7 @@ import java.util.Properties;
 
 public class FlywayMigration {
 
-    public static void main(String[] args) {
+    public void migration() {
         try ( FileReader prop = new FileReader("db.properties")) {
         Properties properties = new Properties();
         properties.load(prop);

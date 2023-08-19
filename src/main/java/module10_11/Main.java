@@ -8,6 +8,9 @@ public class Main {
 
     public static void main(String[] args) {
 
+        FlywayMigration flywayMigration = new FlywayMigration();
+        flywayMigration.migration();
+
         ClientCrudService clientCrudService = new ClientCrudService();
         /*
         clientCrudService.createClient(new Client("Client 12"));
